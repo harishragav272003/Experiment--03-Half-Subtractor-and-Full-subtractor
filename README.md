@@ -32,23 +32,49 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 Write the detailed procedure here 
 
 
-## Program:
+## Programs:
+module halfsub(A,B,diff,borrow);
+input A,B;
+output diff,borrow;
+assign diff=(A^B);
+assign borrow=(~A&B);
+endmodule
+
+module fullsub(X,Y,Z,Borrow,Difference); 
+input X,Y,Z;
+output Borrow,Difference;
+assign Difference = (X^Y^Z);
+assign Borrow = (~X&(Y^Z)|(Y&Z)); 
+endmodule
+
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: HARISH RAGAV S
+RegisterNumber:  22008415
 */
 
 ## Output:
 
 ## Truthtable
+![image](https://user-images.githubusercontent.com/119345345/211159775-6889757d-5668-48ae-85e0-20bfa4b59eb9.png)
+
+![image](https://user-images.githubusercontent.com/119345345/211159783-bc07046d-0b85-4922-b6c3-bbb166af20b3.png)
 
 
 
 ##  RTL realization
+![image](https://user-images.githubusercontent.com/119345345/211159818-6064c8b8-152b-499a-a555-13d25bb591d5.png)
+
+![image](https://user-images.githubusercontent.com/119345345/211159837-d0f41cbc-7f26-43e8-994d-fcddb5d0b747.png)
+
 
 
 ## Timing diagram 
+
+![image](https://user-images.githubusercontent.com/119345345/211159877-8b731187-18e7-4e56-b27e-e5c9caacc537.png)
+
+![image](https://user-images.githubusercontent.com/119345345/211159922-969b0632-cd83-4619-959d-793f21ad16fa.png)
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
